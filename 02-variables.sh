@@ -6,6 +6,7 @@
 
 
 lssss -ltrh
+exit 1
 
 
 #now the above ls command is failed even tough the script will be continue and execute the below command
