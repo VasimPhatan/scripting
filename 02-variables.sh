@@ -1,7 +1,7 @@
 #!/bin/bash
 
-name1=vasim
-name2=ramu
+name1=nazeer
+name2=sarvar
 
 echo  "$name1: hi good morning $name2"
 
