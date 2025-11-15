@@ -1,13 +1,31 @@
 #!/bin/bash
 
-#how to define vraible where the date chnages dynamically.
-
-#     $() ---we will define value in this
+#taking inputs before executing  the script
 
 
-DATE=$(date +%F)
+a=$1
+b=$2
 
-echo "today date is $DATE"
+SCRIPT_NAME=$0
+
+TOTAL_VARIABLES_PASSED=$*
+TOTAL_VARIABLES_PASSED_1=$@
+NUMBER_OF_VARIABLES_PASSED=$#
+
+
+
+
+echo "vaulue of a is $a"
+
+echo "value of b is $b"
+
+
+echo "to print the total variables passed $TOTAL_VARIABLES_PASSED"
+
+echo "to print the number of variables passed $NUMBER_OF_VARIABLES_PASSED"
+
+echo "to print the script name $SCRIPT_NAME"
+
 
 
 
