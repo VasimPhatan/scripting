@@ -1,13 +1,13 @@
 #!/bin/bash
 
-name1=nazeer
-name2=sarvar
+#how to define vraible where the date chnages dynamically.
 
-echo  "$name1: hi good morning $name2"
+#     $() ---we will define value in this
 
-echo  "$name2 : hi good morning $name1"
 
-echo   "$name2 : how are u $name1"
+DATE=$(date +%F)
 
-echo  "$name1 : i am fine $name2"
+echo "today date is $DATE"
+
+
 
