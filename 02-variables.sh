@@ -1,26 +1,16 @@
 #!/bin/bash
 
-#providing the data to the variable during executing the script we will use read
+#now we are going to see the exit status 
+
+#                              $? in this varible the previous command exit status will be stored 
 
 
-echo "plese enter username"
-read USERNAME              #username will be stored in this USERNAME variable
-
-echo "please enter password"
-read -s PASSWORD             #password  will be stored in this USERNAME variable , but while entering the passsword it should not print on terminal so we ill use -s option.
+lssss -ltrh
 
 
+#now the above ls command is failed even tough the script will be continue and execute the below command
 
-
-
-
-#printing the username
-echo "user is $USERNAME"
-
-
-#printing the password
-echo "passowerd entered is $PASSWORD"
-
+ls 
 
 
 
