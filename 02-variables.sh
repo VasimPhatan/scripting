@@ -1,10 +1,13 @@
 #!/bin/bash
 
-echo  "vasim : hi good morning ramu"
+name1=vasim
+name2=ramu
 
-echo  "ramu : hi good morning vasim"
+echo  "$name1: hi good morning $name2"
 
-echo   "ramu : how are u vasim"
+echo  "$name2 : hi good morning $name1"
 
-echo  "vasim : i am fine ramu"
+echo   "$name2 : how are u $name1"
+
+echo  "$name1 : i am fine $name2"
 
