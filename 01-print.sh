@@ -1,16 +1,28 @@
 #!/bin/bash
 
-#if we know the list of items we will go with for loop 
+# we will implement colours
+# we will implement validation.
+# we will check if apache and nginx services are alreday installed or not
 
-# loops with c style syntax.
 
-#example: for loop to print 5 numbers
 
-for ((i=1; i<=5; i++))
+DATE=$(date +%F) 
+LOGDIR=/tmp
+SCRIPT_NAME=$0
+LOG_FILE=$LOGDIR/$SCRIPT_NAME-$DATE.log
+
+
+for i in $@
 do
-    echo "$i"
-done
+    yum install $a -y &>>$LOG_FILE
+    if [ $? -ne 0 ]; then
+        echo "installation of $a.........failure"
+        exit 1
+    else
+        echo "installation of $a........success"
+    fi   
 
+done
 
 
 
