@@ -22,7 +22,7 @@ do
         echo -e "installation of $i......... $R failure $N"
         exit 1
     else
-        echo "installation of $i........ $G success $N"
+        echo  -e "installation of $i........ $G success $N"
     fi   
 
 done
