@@ -35,6 +35,7 @@ yum list installed | grep $i
     echo "$i is not present installing the packages"
     yum install $i -y  &>>$LOG_FILE
     VALIDATE $? $i
+    fi
 done
 
 
