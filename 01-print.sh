@@ -20,23 +20,23 @@ if [ $ID -ne 0 ] ; then
     echo  -e "you are not root user ...... $R you cannot continue the script $N"
     exit 1
 else
-    echo "you are root user........ $G you can continue the script $N"
+    echo -e "you are root user........ $G you can continue the script $N"
 fi
 
 yum install httpd -y  &>>$LOGDIR
 if [ $? -ne 0 ]; then 
-    echo "installation of httpd.......... $R failure $N"
+    echo -e "installation of httpd.......... $R failure $N"
     exit 1
 else 
-    echo "installation of httpd........... $G sucecss $N"
+    echo -e "installation of httpd........... $G sucecss $N"
 fi
 
 yum install nginx -y &>>$LOGDIR
 if [ $? -ne 0 ]; then 
-    echo "installation of nginx.......... $R failure $N"
+    echo -e "installation of nginx.......... $R failure $N"
     exit 1
 else 
-    echo "installation of nginx........... $G sucecss $N "
+    echo -e  "installation of nginx........... $G sucecss $N "
 fi
 
 
