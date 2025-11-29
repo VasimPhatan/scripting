@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#now we will install httpd nginx services 
+#now we will install httpd nginx services abnd we will use functions for validation. 
 
 DATE=$(date +%F)
 ID=$(id -u)
@@ -10,8 +10,14 @@ LOGDIR=/tmp/$SCRIPT_NAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-
-echo "The script is executed on $DATE"
+VALIDATE () {
+    if [ $1 -ne 0 ]; then 
+      echo -e "$2.......... $R failure $N"
+      exit 1
+    else 
+       echo -e "$2........... $G sucecss $N"
+    fi
+}
 
 
 
@@ -24,20 +30,14 @@ else
 fi
 
 yum install httpd -y  &>>$LOGDIR
-if [ $? -ne 0 ]; then 
-    echo -e "installation of httpd.......... $R failure $N"
-    exit 1
-else 
-    echo -e "installation of httpd........... $G sucecss $N"
-fi
+VALIDATE $? "installtion of httpd"
+
+
 
 yum install nginx -y &>>$LOGDIR
-if [ $? -ne 0 ]; then 
-    echo -e "installation of nginx.......... $R failure $N"
-    exit 1
-else 
-    echo -e  "installation of nginx........... $G sucecss $N "
-fi
+VALIDATE $? "installtion of nginx"
+
+
 
 
 
