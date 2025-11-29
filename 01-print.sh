@@ -14,12 +14,12 @@ LOG_FILE=$LOGDIR/$SCRIPT_NAME-$DATE.log
 
 for i in $@
 do
-    yum install $@ -y  &>>$LOG_FILE
+    yum install $i -y  &>>$LOG_FILE
     if [ $? -ne 0 ]; then
-        echo "installation of $@.........failure"
+        echo "installation of $i.........failure"
         exit 1
     else
-        echo "installation of $@........success"
+        echo "installation of $i........success"
     fi   
 
 done
