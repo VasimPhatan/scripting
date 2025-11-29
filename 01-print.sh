@@ -29,7 +29,7 @@ else
     echo -e "you are root user........ $G you can continue the script $N"
 fi
 
-yum install httpd -y  &>>$LOGDIR
+yum install httpddd -y  &>>$LOGDIR
 VALIDATE $? "installtion of httpd"
 
 
