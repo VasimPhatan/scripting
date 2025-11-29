@@ -4,7 +4,7 @@
 
 # loops with range of numbers.
 
-example: for loop to print 5 numbers
+#example: for loop to print 5 numbers
 
 for i in {1....5}
 do
