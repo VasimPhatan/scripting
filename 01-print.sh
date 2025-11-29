@@ -6,7 +6,7 @@
 
 #example: for loop to print 5 numbers
 
-for i in {1....5}
+for i in {1..5}
 do
     echo "$i"
 done
