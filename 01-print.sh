@@ -1,16 +1,50 @@
 #!/bin/bash
 
-#printing the output
-echo " hello world"
+#now we will install httpd nginx services 
 
-# if we want to add colours to the output"
-echo -e " \e[32m my name is vasim \e[0m"
+DATE=$(date +%F)
+ID=$(id -u)
+SCRIPT_NAME=$0
+LOGDIR=/tmp/$SCRIPT_NAME-$DATE.log
 
-#if we want to give tab space b/w  data 
-echo  -e "my name is\tvasim"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
-#if we want to print the vasim in the next line
-echo -e "my name is \n vasim"
+echo "The script is executed on $DATE"
+
+
+
+if [ $ID -ne 0 ] ; then
+
+    echo  -e "you are not root user ...... $R you cannot continue the script $N"
+    exit 1
+else
+    echo "you are root user........ $G you can continue the script $N"
+fi
+
+yum install httpd -y  &>>$LOGDIR
+if [ $? -ne 0 ]; then 
+    echo "installation of httpd.......... $R failure $N"
+    exit 1
+else 
+    echo "installation of httpd........... $G sucecss $N"
+fi
+
+yum install nginx -y &>>$LOGDIR
+if [ $? -ne 0 ]; then 
+    echo "installation of nginx.......... $R failure $N"
+    exit 1
+else 
+    echo "installation of nginx........... $G sucecss $N "
+fi
+
+
+
+
+
+
+
 
 
 
