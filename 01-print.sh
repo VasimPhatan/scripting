@@ -16,7 +16,8 @@ echo "$LOG_FILE"  &>>$LOG_FILE
 
 FILES_TO_DELETE=$(find $APP_LOG_DIRECTORY -name "*.log" -type f -mtime 14)
 
-while do line
+while read line
+do
     echo "$FILES_TO_DELETE"
     rm -rf $line
     
