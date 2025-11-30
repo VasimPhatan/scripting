@@ -27,8 +27,8 @@ VALIDATE () {
 
 for i in $@
 do
-yum list installed | grep $i
-    if [ $? -ne 0 ]; then   
+  yum list installed $i
+    if [ $? -eq 0 ]; then   
         echo "$i is alreday installed no need to install"
         exit 1
     else
