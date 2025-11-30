@@ -10,7 +10,7 @@
 DATE=$(date +%F)
 APP_LOG_DIRECTORY=/home/centos/app_logs  #this is the path logs files need to be delete
 SCRIPT_NAME=$0
-LOG_FILE=/tmp/$SCRIPT_NAME-$DATE.log
+LOG_FILE=/home/centos/$SCRIPT_NAME-$DATE.log
 
 echo "script started executing at  $DATE" &>>$LOG_FILE
 
