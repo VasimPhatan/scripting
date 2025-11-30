@@ -1,4 +1,4 @@
-print numbers 1 to 10
+#print numbers 1 to 10
 
 i=1
 while [ $i -gt 10  ]
