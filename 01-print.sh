@@ -27,7 +27,7 @@ VALIDATE () {
 
 for i in $@
 do
-  yum list installed $i
+  yum list installed $i &>>$LOG_FILE
     if [ $? -eq 0 ]; then   
         echo "$i is alreday installed no need to install"
         exit 1
