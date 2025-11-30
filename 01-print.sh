@@ -13,7 +13,7 @@ LOG_FILE=$LOGDIR/$SCRIPT_NAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-
+Y="\e[33m"
 
 VALIDATE () {
     if [ $1 -ne 0 ]; then  
@@ -27,17 +27,17 @@ VALIDATE () {
 
 for i in $@
 do
-  yum list installed $i &>>$LOG_FILE
-    if [ $? -eq 0 ]; then   
-        echo "$i is alreday installed no need to install"
-        exit 1
+    yum list installed $i &>>$LOGFILE
+    if [ $? -ne 0 ]
+    then
+        echo "$i is not installed, let's install it"
+        yum install $i -y &>>$LOGFILE
+        VALIDATE $? "$i"
     else
-    echo "$i is not present installing the packages"
-    yum install $i -y  &>>$LOG_FILE
-    VALIDATE $? $i
+        echo -e "$Y $i is already installed $N"
     fi
-done
 
+done
 
 
 
