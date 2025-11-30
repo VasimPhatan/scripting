@@ -10,7 +10,7 @@
 DATE=$(date +%F-%H-%M-%s)
 APP_LOG_DIRECTORY=/home/centos/app_logs
 SCRIPT_NAME=$0
-LOG_FILE=/tmp/$SCRIPT_NAME-$APP_LOG_DIRECTORY-$DATE.log
+LOG_FILE=$(/tmp/$SCRIPT_NAME-$APP_LOG_DIRECTORY-$DATE.log)
 
 
 echo "$LOG_FILE" > $LOG_FILE
