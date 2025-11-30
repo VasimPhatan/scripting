@@ -8,20 +8,20 @@
 #we will use while loops to delete the files.
 
 DATE=$(date +%F)
-APP_LOG_DIRECTORY=/home/centos/app_logs
+APP_LOG_DIRECTORY=/home/centos/app_logs  #this is the path logs files need to be delete
 SCRIPT_NAME=$0
-LOG_FILE=$APP_LOG_DIRECTORY/$SCRIPT_NAME-$DATE.log
+LOG_FILE=/tmp/$SCRIPT_NAME-$DATE.log
 
-echo "$LOG_FILE"  &>>$LOG_FILE
+echo "script started executing at  $DATE" &>>$LOG_FILE
 
-FILES_TO_DELETE=$(find $APP_LOG_DIRECTORY -name "*.log" -type f -mtime +14)
+FILES_TO_DELETE=$(find $APP_LOG_DIRECTORY -name "*.log" -type f -mtime +14)  # this will find the files to be deleted
 
-while read line
+while read line     # it will take first line from output and delete and continous in loop until all files gets deleted.
 do
     echo "deleting $line" &>> $LOG_FILE
     rm -rf $line
     
-done <<< $FILES_TO_DELETE
+done <<< $FILES_TO_DELETE   #we are passing the ouput of find command as input to while loop
 
 
 
